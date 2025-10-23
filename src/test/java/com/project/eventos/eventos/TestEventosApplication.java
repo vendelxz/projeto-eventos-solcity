@@ -2,6 +2,8 @@ package com.project.eventos.eventos;
 
 import org.springframework.boot.SpringApplication;
 
+import com.project.eventos.Application.EventosApplication;
+
 public class TestEventosApplication {
 
 	public static void main(String[] args) {
