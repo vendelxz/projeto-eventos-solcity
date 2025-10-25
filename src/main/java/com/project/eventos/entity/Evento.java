@@ -23,9 +23,10 @@ public class Evento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // TODO: Adicionar relacionamento @ManyToOne com a entidade Organizadora
-    @Column(name = "organizer_id", nullable = false)
-    private Long organizerId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "organizadora_id", nullable = false)
+    private Organizadora organizadora;
+
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
