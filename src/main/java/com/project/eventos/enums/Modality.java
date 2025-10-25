@@ -16,4 +16,6 @@ public enum Modality {
     // Campeonatos
     FUTEBOL_CAMPO,
     FUTSAL
+
+    //Todos esses podem e devem ser expandidos de acordo com as necessidades do nossos sistema.
 }
