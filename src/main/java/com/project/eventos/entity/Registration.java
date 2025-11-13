@@ -46,9 +46,9 @@ public class Registration {
     private RegistrationStatus status;
 
     // Armazena respostas do formulário; usa conversor para persistir como JSON/text
-    @Convert(converter = com.project.eventos.persistence.JsonNodeConverter.class)
-    @Column(columnDefinition = "jsonb")
-    private JsonNode answers;
+   // @Convert(converter = com.project.eventos.persistence.JsonNodeConverter.class)
+    //@Column(columnDefinition = "jsonb")
+    //private JsonNode answers;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;

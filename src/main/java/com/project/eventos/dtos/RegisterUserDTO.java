@@ -22,7 +22,7 @@ public class RegisterUserDTO {
     @Size(min = 8, message = "A senha deve ter no mínimo 8 caracteres.")
     private String senha; // Senha em texto plano
 
-    // Campos opcionais do registro, baseados na sua entidade Usuario
+    // Campos opcionais do registro
     private String cidade;
     private LocalDate nascimento;
 }
