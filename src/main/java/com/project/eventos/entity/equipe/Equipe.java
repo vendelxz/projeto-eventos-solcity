@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "teams")
-@EntityListeners(AuditingEntityListener.class) // Habilita auditoria de datas
+@EntityListeners(AuditingEntityListener.class) 
 public class Equipe {
 
     @Id
@@ -36,7 +36,7 @@ public class Equipe {
     // Muitas equipes podem ser gerenciadas por um usuário
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "manager_user_id", nullable = false)
-    private Usuario manager; // Link para a entidade User
+    private Usuario manager; 
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)

@@ -23,7 +23,7 @@ public class EventAddon {
     private Evento evento;
 
     @Column(nullable = false)
-    private String name; // Ex: "Camiseta Extra", "Jantar de Massas"
+    private String name; // Ex: "Camiseta Extra"
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;

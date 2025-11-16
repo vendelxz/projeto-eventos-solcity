@@ -12,10 +12,6 @@ import com.project.eventos.entity.user.Usuario;
 @RequestMapping("/test") 
 public class TestController {
 
-    /**
-     * Este endpoint SÓ deve ser acessível se um token JWT válido
-     * for enviado no cabeçalho.
-     */
     @GetMapping("/protected")
     public ResponseEntity<String> getProtectedData(
         @AuthenticationPrincipal Usuario usuario) {

@@ -20,7 +20,6 @@ public class Competition {
     private Long id;
 
     // Ligação um-para-um: Um Evento (do tipo campeonato) 
-    // tem uma definição de Competição.
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "event_id", nullable = false, unique = true)
     private Evento evento;
@@ -29,7 +28,7 @@ public class Competition {
     @Column(nullable = false)
     private CompetitionFormat format; // Ex: LEAGUE, KNOCKOUT, GROUP_STAGE
 
-    @Column(name = "groups_count") // 'groups' pode ser uma palavra reservada em SQL
+    @Column(name = "groups_count") 
     private Integer groups;
 
     private Integer rounds;

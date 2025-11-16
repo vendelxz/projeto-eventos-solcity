@@ -7,8 +7,8 @@ import lombok.Data;
 @Data
 public class CreateEquipeDTO {
 
-    // Assumimos que o 'managerId' virá do usuário autenticado (token)
-    // e será processado no Service.
+    // O managerID virá do token que será processado no service!!
+   
 
     @NotBlank(message = "O nome da equipe é obrigatório.")
     @Size(min = 3, max = 150)

@@ -8,6 +8,6 @@ public class EquipeDTO {
     private String nome;
     private String cidade;
     private String logoUrl;
-    private Long managerUserId; // Apenas o ID do gerente
-    private String managerName; // Útil para exibir o nome do gerente
+    private Long managerUserId; 
+    private String managerName; 
 }

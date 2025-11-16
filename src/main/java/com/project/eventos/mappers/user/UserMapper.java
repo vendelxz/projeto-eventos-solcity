@@ -23,7 +23,7 @@ public class UserMapper {
         dto.setAvatarUrl(usuario.getAvatarUrl());
         dto.setRoles(usuario.getRoles());
         
-        // Propositalmente omitindo o senhaHash
+        
         
         return dto;
     }

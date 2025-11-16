@@ -18,6 +18,5 @@ public class UserDTO {
     private String avatarUrl;
     private Set<Role> roles;
 
-    // Construtor, Getters e Setters são gerenciados pelo @Data (Lombok)
-    // O campo 'senhaHash' da entidade Usuario é omitido propositalmente.
+    // O campo 'senhaHash' da entidade Usuario é escondido por questões de segurança...
 }
