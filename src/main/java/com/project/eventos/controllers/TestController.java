@@ -1,11 +1,12 @@
 package com.project.eventos.controllers;
 
-import com.project.eventos.entity.Usuario;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.project.eventos.entity.user.Usuario;
 
 @RestController
 @RequestMapping("/test") 

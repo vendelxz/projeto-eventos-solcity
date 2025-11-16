@@ -1,6 +1,6 @@
 package com.project.eventos.security;
 
-import com.project.eventos.entity.Usuario;
+import com.project.eventos.entity.user.Usuario;
 import com.project.eventos.repository.UserRepository;
 import com.project.eventos.service.TokenService;
 import jakarta.servlet.FilterChain;

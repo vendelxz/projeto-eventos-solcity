@@ -1,11 +1,12 @@
 package com.project.eventos.service;
 
-import com.project.eventos.entity.Usuario;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import com.project.eventos.entity.user.Usuario;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
@@ -23,10 +24,6 @@ public class TokenService {
     @Value("${jwt.expiration}")
     private long jwtExpirationMs;
 
-    /**
-     * Gera um novo token JWT para o usuário autenticado.
-     * (Corrigido para usar a API moderna do builder)
-     */
     public String generateToken(Usuario usuario) {
         // "Claims" são as informações que colocamos dentro do token
         Map<String, Object> claims = new HashMap<>();
@@ -43,10 +40,6 @@ public class TokenService {
                 .compact();
     }
 
-    /**
-     * Valida um token.
-     * (Corrigido para usar a API moderna do parser)
-     */
     public boolean validateToken(String token) {
         try {
             Jwts.parser() // Método moderno (corrigindo o 'parserBuilder()')
@@ -75,12 +68,6 @@ public class TokenService {
         return getClaimFromToken(token, claims -> claims.get("roles"));
     }
 
-    // --- Métodos Auxiliares ---
-
-    /**
-     * Função genérica para extrair uma informação (claim) específica do token.
-     * (Corrigido para usar a API moderna do parser)
-     */
     private <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = Jwts.parser()
                 .verifyWith(getSigningKey())

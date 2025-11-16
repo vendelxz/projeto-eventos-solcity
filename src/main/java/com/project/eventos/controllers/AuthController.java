@@ -1,9 +1,9 @@
 package com.project.eventos.controllers;
 
-import com.project.eventos.dtos.AuthResponseDTO;
-import com.project.eventos.dtos.LoginUserDTO;
-import com.project.eventos.dtos.RegisterUserDTO;
-import com.project.eventos.dtos.UserDTO;
+import com.project.eventos.dtos.user.AuthResponseDTO;
+import com.project.eventos.dtos.user.LoginUserDTO;
+import com.project.eventos.dtos.user.RegisterUserDTO;
+import com.project.eventos.dtos.user.UserDTO;
 import com.project.eventos.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
