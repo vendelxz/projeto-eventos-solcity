@@ -1,8 +1,9 @@
 package com.project.eventos.repository;
 
-import com.project.eventos.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.project.eventos.entity.user.Usuario;
 
 import java.util.Optional;
 

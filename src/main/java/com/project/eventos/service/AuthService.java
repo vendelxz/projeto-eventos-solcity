@@ -1,12 +1,12 @@
 package com.project.eventos.service;
 
-import com.project.eventos.dtos.AuthResponseDTO;
-import com.project.eventos.dtos.LoginUserDTO;
-import com.project.eventos.dtos.RegisterUserDTO;
-import com.project.eventos.dtos.UserDTO;
-import com.project.eventos.entity.Usuario;
-import com.project.eventos.enums.Role;
-import com.project.eventos.mappers.UserMapper;
+import com.project.eventos.dtos.user.AuthResponseDTO;
+import com.project.eventos.dtos.user.LoginUserDTO;
+import com.project.eventos.dtos.user.RegisterUserDTO;
+import com.project.eventos.dtos.user.UserDTO;
+import com.project.eventos.entity.user.Usuario;
+import com.project.eventos.enums.user.Role;
+import com.project.eventos.mappers.user.UserMapper;
 import com.project.eventos.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
