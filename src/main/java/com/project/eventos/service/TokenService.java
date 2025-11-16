@@ -42,28 +42,21 @@ public class TokenService {
 
     public boolean validateToken(String token) {
         try {
-            Jwts.parser() // Método moderno (corrigindo o 'parserBuilder()')
+            Jwts.parser() 
                     .verifyWith(getSigningKey())
                     .build()
-                    .parseSignedClaims(token); // Renomeado de 'parseClaimsJws'
+                    .parseSignedClaims(token); 
             return true;
         } catch (Exception e) {
-            // Token inválido (expirado, assinatura errada, etc.)
             return false;
         }
     }
 
-    /**
-     * Extrai o ID do usuário (o "Subject") de dentro do token.
-     */
     public Long getUserIdFromToken(String token) {
         String subject = getClaimFromToken(token, Claims::getSubject);
         return Long.parseLong(subject);
     }
     
-    /**
-     * Extrai os papéis (roles) de dentro do token.
-     */
     public Object getRolesFromToken(String token) {
         return getClaimFromToken(token, claims -> claims.get("roles"));
     }
@@ -73,13 +66,10 @@ public class TokenService {
                 .verifyWith(getSigningKey())
                 .build()
                 .parseSignedClaims(token)
-                .getPayload(); // Renomeado de 'getBody'
+                .getPayload(); 
         return claimsResolver.apply(claims);
     }
 
-    /**
-     * Cria a chave de assinatura (SecretKey) a partir da string secreta.
-     */
     private SecretKey getSigningKey() {
         byte[] keyBytes = this.jwtSecret.getBytes(StandardCharsets.UTF_8);
         return Keys.hmacShaKeyFor(keyBytes);

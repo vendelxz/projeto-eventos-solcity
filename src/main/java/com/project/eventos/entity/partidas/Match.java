@@ -28,7 +28,7 @@ public class Match {
 
     private Integer round; // Rodada
 
-    @Column(name = "group_name") // "group" é palavra reservada em SQL
+    @Column(name = "group_name") 
     private String group; // Grupo (ex: "A", "B")
 
     // Muitas partidas podem ter a mesma equipe como time da casa

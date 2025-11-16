@@ -20,10 +20,6 @@ public class AuthController {
         this.authService = authService;
     }
 
-    /**
-     * Endpoint para registro de novos usuários.
-     * Mapeado para POST /auth/register
-     */
     @PostMapping("/register")
     public ResponseEntity<UserDTO> register(@Valid @RequestBody RegisterUserDTO registerDTO) {
         UserDTO usuario = authService.register(registerDTO);
@@ -32,10 +28,6 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
     }
 
-    /**
-     * Endpoint para login de usuários existentes.
-     * Mapeado para POST /auth/login
-     */
     @PostMapping("/login")
     public ResponseEntity<AuthResponseDTO> login(@Valid @RequestBody LoginUserDTO loginDTO) {
         AuthResponseDTO authResponse = authService.login(loginDTO);

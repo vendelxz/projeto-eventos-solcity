@@ -33,7 +33,7 @@ public class Standing {
     @JoinColumn(name = "team_id", nullable = false)
     private Equipe equipe;
 
-    // inicializamos com 0 para garantir que 
+    // Colocamos 0 para garantir que 
     // os valores nunca sejam nulos no banco.
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
     private Integer played = 0; // Jogos

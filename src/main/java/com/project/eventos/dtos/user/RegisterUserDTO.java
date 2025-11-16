@@ -20,9 +20,9 @@ public class RegisterUserDTO {
 
     @NotBlank(message = "A senha é obrigatória.")
     @Size(min = 8, message = "A senha deve ter no mínimo 8 caracteres.")
-    private String senha; // Senha em texto plano
+    private String senha; //Senha em texto para não retornar a senha hasheada no nosso usuário!!
 
-    // Campos opcionais do registro
+    // São opcionais, coloca se quiser para os testes...
     private String cidade;
     private LocalDate nascimento;
 }
