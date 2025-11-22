@@ -1,15 +1,10 @@
 package com.project.eventos.entity.eventos;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Entity
 @Table(name = "event_lots")
 public class EventLot {
@@ -37,4 +32,80 @@ public class EventLot {
 
     @Version // Para controle de concorrência (Optimistic Locking)
     private Integer version;
+
+
+    public EventLot() {
+    }
+
+    public EventLot(Evento evento, String name, BigDecimal price, LocalDateTime startAt, LocalDateTime endAt, Integer quantity) {
+        this.evento = evento;
+        this.name = name;
+        this.price = price;
+        this.startAt = startAt;
+        this.endAt = endAt;
+        this.quantity = quantity;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public LocalDateTime getStartAt() {
+        return startAt;
+    }
+
+    public LocalDateTime getEndAt() {
+        return endAt;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public Integer getSold() {
+        return sold;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        EventLot other = (EventLot) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
+    }
+
+    
 }

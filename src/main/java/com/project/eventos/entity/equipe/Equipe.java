@@ -1,9 +1,6 @@
 package com.project.eventos.entity.equipe; 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -12,9 +9,6 @@ import com.project.eventos.entity.user.Usuario;
 
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "teams")
 @EntityListeners(AuditingEntityListener.class) 
@@ -47,4 +41,45 @@ public class Equipe {
     private LocalDateTime updatedAt;
 
     // TODO: Adicionar futuramente o relacionamento @OneToMany para TeamMember (membros da equipe)
+
+    public Equipe() {
+    }
+
+    public Equipe(String nome, String cidade, String logoUrl, Usuario manager) {
+        this.nome = nome;
+        this.cidade = cidade;
+        this.logoUrl = logoUrl;
+        this.manager = manager;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getLogoUrl() {
+        return logoUrl;
+    }
+
+    public Usuario getManager() {
+        return manager;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    
+
 }

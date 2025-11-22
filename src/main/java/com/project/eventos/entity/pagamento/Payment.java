@@ -9,20 +9,13 @@ import com.project.eventos.enums.pagamento.PaymentStatus;
 
 import jakarta.persistence.Id;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 
 
 
 @Entity
 @Table(name = "payments")
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class Payment {
 
     @Id
@@ -56,6 +49,77 @@ public class Payment {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private OffsetDateTime paidAt;
 
+    public Payment() {
+    }
+    
+    public Payment(Long registrationId, Method method, String gateway, BigDecimal amount, PaymentStatus status) {
+        this.registrationId = registrationId;
+        this.method = method;
+        this.gateway = gateway;
+        this.amount = amount;
+        this.status = status;
+    }
 
-    //TO-DO
+    public Long getId() {
+        return id;
+    }
+
+    public Long getRegistrationId() {
+        return registrationId;
+    }
+
+    public Method getMethod() {
+        return method;
+    }
+
+    public String getGateway() {
+        return gateway;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public PaymentStatus getStatus() {
+        return status;
+    }
+
+    public String getProviderRef() {
+        return providerRef;
+    }
+
+    public String getQrCode() {
+        return qrCode;
+    }
+
+    public OffsetDateTime getPaidAt() {
+        return paidAt;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Payment other = (Payment) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
+    }
+
+    
 }
