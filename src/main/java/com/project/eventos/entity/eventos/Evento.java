@@ -1,4 +1,4 @@
-package com.project.eventos.entity;
+package com.project.eventos.entity.eventos;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,9 +8,10 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import com.project.eventos.enums.EventStatus;
-import com.project.eventos.enums.EventType;
-import com.project.eventos.enums.Modality;
+import com.project.eventos.entity.organizadora.Organizadora;
+import com.project.eventos.enums.evento.EventStatus;
+import com.project.eventos.enums.evento.EventType;
+import com.project.eventos.enums.evento.Modality;
 
 @Data
 @NoArgsConstructor
@@ -23,9 +24,10 @@ public class Evento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // TODO: Adicionar relacionamento @ManyToOne com a entidade Organizadora
-    @Column(name = "organizer_id", nullable = false)
-    private Long organizerId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "organizadora_id", nullable = false)
+    private Organizadora organizadora;
+
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

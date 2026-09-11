@@ -1,4 +1,4 @@
-package com.project.eventos.enums;
+package com.project.eventos.enums.evento;
 
 public enum EventType {
     CORRIDA,

@@ -1,4 +1,4 @@
-package com.project.eventos.dtos;
+package com.project.eventos.dtos.organizadora;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -9,7 +9,7 @@ import lombok.Data;
 public class CreateOrganizadoraDTO {
 
     // O ID do usuário dono será pego do token de autenticação (JWT)
-    // não precisando ser enviado no DTO.
+   
 
     @NotNull(message = "Nome de exibição não pode ser nulo.")
     @NotBlank(message = "O nome de exibição é obrigatório.")

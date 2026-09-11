@@ -1,4 +1,4 @@
-package com.project.eventos.entity;
+package com.project.eventos.entity.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import com.project.eventos.enums.Role;
+import com.project.eventos.enums.user.Role;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

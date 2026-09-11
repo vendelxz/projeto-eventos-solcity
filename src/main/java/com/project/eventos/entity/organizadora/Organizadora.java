@@ -1,4 +1,4 @@
-package com.project.eventos.entity;
+package com.project.eventos.entity.organizadora;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import com.project.eventos.entity.user.Usuario;
 
 import java.time.LocalDateTime;
 
@@ -25,7 +27,7 @@ public class Organizadora {
     // Um Usuário é dono de um perfil de Organizadora
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_usuario_id", nullable = false, unique = true)
-    private Usuario owner; // Link para a entidade Usuário
+    private Usuario owner; 
 
     @Column(name = "display_name", nullable = false, length = 150)
     private String displayName; // Nome público da Organizadora
@@ -36,7 +38,7 @@ public class Organizadora {
     @Column(length = 100)
     private String contato; // Pode ser um e-mail ou telefone de contato público
 
-    private String address; // Endereço
+    private String address; 
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)

@@ -1,0 +1,38 @@
+package com.project.eventos.controllers;
+
+import com.project.eventos.dtos.user.AuthResponseDTO;
+import com.project.eventos.dtos.user.LoginUserDTO;
+import com.project.eventos.dtos.user.RegisterUserDTO;
+import com.project.eventos.dtos.user.UserDTO;
+import com.project.eventos.service.AuthService;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/auth") 
+public class AuthController {
+
+    private final AuthService authService;
+
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<UserDTO> register(@Valid @RequestBody RegisterUserDTO registerDTO) {
+        UserDTO usuario = authService.register(registerDTO);
+        
+        // Retorna 201 Created com o usuário criado (sem a senha)
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponseDTO> login(@Valid @RequestBody LoginUserDTO loginDTO) {
+        AuthResponseDTO authResponse = authService.login(loginDTO);
+        
+        // Retorna 200 OK com o token e os dados do usuário
+        return ResponseEntity.ok(authResponse);
+    }
+}

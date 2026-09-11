@@ -2,7 +2,7 @@ package com.project.eventos.eventos;
 
 import org.springframework.boot.SpringApplication;
 
-import com.project.eventos.Application.EventosApplication;
+import com.project.eventos.EventosApplication;
 
 public class TestEventosApplication {
 
